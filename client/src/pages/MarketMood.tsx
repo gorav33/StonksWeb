@@ -233,11 +233,13 @@ export default function MarketMood() {
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
 
+  const backnedUrl =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
   // Fetch data from your local API
   const fetchMarketData = async () => {
     try {
       setApiError(null);
-      const response = await fetch("http://localhost:4000/api/market/overview");
+      const response = await fetch(`${backnedUrl}/api/market/overview`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
