@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stonks Design System - Meme-driven Fintech Aesthetics */
+
+@layer base {
+  :root {
+    /* Dark-first Stonks Theme */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Stonks Brand Colors */
+    --primary: 142 76% 36%; /* Electric Green - "Stonks Up" */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Neon Accents */
+    --neon-blue: 210 100% 56%;
+    --neon-green: 142 76% 36%;
+    --alpha-gold: 45 100% 60%;
+    --danger-red: 0 84% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 14%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Stonks-specific Design Tokens */
+    --stonks-gradient: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 76% 40%));
+    --alpha-gradient: linear-gradient(135deg, hsl(45 100% 60%), hsl(35 100% 65%));
+    --chad-shadow: 0 0 30px hsl(142 76% 36% / 0.3);
+    --glow-effect: 0 0 20px hsl(142 76% 36% / 0.4);
+    
+    /* Typography Scale */
+    --font-stonks: 'Inter', system-ui, sans-serif;
+    --font-weight-chad: 800;
+    --font-weight-alpha: 600;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Stonks Utility Classes */
+@layer components {
+  .stonks-gradient {
+    background: var(--stonks-gradient);
+  }
+  
+  .alpha-gradient {
+    background: var(--alpha-gradient);
+  }
+  
+  .chad-glow {
+    box-shadow: var(--chad-shadow);
+  }
+  
+  .text-stonks {
+    font-family: var(--font-stonks);
+    font-weight: var(--font-weight-chad);
+    letter-spacing: -0.02em;
+  }
+  
+  .text-alpha {
+    font-weight: var(--font-weight-alpha);
+  }
+  
+  .stonks-button {
+    @apply bg-primary text-primary-foreground font-bold py-3 px-6 rounded-xl;
+    @apply hover:shadow-lg hover:scale-105 transition-all duration-200;
+    @apply active:scale-95;
+    background: var(--stonks-gradient);
+    box-shadow: var(--glow-effect);
+  }
+  
+  .alpha-badge {
+    @apply px-3 py-1 rounded-full text-sm font-semibold;
+    background: var(--alpha-gradient);
+    color: hsl(0 0% 10%);
+  }
+  
+  .chat-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-xs shadow-sm;
+  }
+  
+  .chat-bubble-user {
+    @apply chat-bubble bg-primary text-primary-foreground ml-auto;
+    background: var(--stonks-gradient);
+  }
+  
+  .chat-bubble-stonks {
+    @apply chat-bubble bg-card text-card-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-stonks);
+  }
+  
+  /* Smooth animations for that premium feel */
+  * {
+    @apply transition-colors duration-200;
+  }
+}
