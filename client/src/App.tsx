@@ -7,8 +7,6 @@ import Home from "./pages/Home";
 import VideoChat from "./pages/VideoChat";
 import NotFound from "./pages/NotFound";
 import MarketMood from "./pages/MarketMood";
-import QuoteOfTheDay from "./pages/QuoteOfDay";
-import SimliAgent from "./pages/SImliAgent";
 import Demo from "./pages/SImliAgent";
 
 const queryClient = new QueryClient();
@@ -23,7 +21,6 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<VideoChat />} />
           <Route path="/markit-mood" element={<MarketMood />} />
-          <Route path="/quote-of-the-day" element={<QuoteOfTheDay />} />
           <Route path="/simli-agent" element={<Demo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
