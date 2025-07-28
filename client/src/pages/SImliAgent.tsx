@@ -168,13 +168,13 @@ const Demo: React.FC = () => {
         </div>
 
         {/* Face Image */}
-        {showDottedFace && (
+        {/* {showDottedFace && (
           <img
             src={DottedFace}
             alt="Dotted Face"
             className="mx-auto w-[300px]"
           />
-        )}
+        )} */}
 
         {/* Face Scanner (Uncomment when ready) */}
         {/* <FaceScanner onCapture={(id) => setFaceId(id)} /> */}

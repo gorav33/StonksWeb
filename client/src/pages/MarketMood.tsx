@@ -233,10 +233,9 @@ export default function MarketMood() {
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState(null);
 
-  const backnedUrl =
-    import.meta.env.VITE_BACKEND_URL ||
-    "https://stonks-web-server.onrender.com";
+  const backnedUrl = import.meta.env.VITE_BACKEND_URL;
   // Fetch data from your local API
+  console.log(backnedUrl);
   const fetchMarketData = async () => {
     try {
       setApiError(null);
